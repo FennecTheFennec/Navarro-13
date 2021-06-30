@@ -17,6 +17,15 @@
 	wound_bonus = -20
 	bare_wound_bonus = 10
 
+/obj/item/projectile/beam/simple/high
+	damage = 35
+
+/obj/item/projectile/beam/simple/med
+	damage = 27
+
+/obj/item/projectile/beam/simple/low
+	damage = 20
+
 /obj/item/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
@@ -364,6 +373,10 @@
 	flag = "laser" //checks vs. energy protection
 	eyeblur = 0
 	is_reflectable = FALSE
+
+
+/obj/item/projectile/f13plasma/repeater/simple
+	damage = 12
 
 /obj/item/projectile/f13plasma/pistol //Plasma pistol
 	damage = 53

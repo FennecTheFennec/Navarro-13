@@ -11,6 +11,7 @@
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
+	check_friendly_fire = 1
 	speed = 1
 	stat_attack = 1
 	robust_searching = 1
@@ -131,6 +132,7 @@
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
+	check_friendly_fire = 1
 	speed = 0
 	stat_attack = 1
 	robust_searching = 1
@@ -170,11 +172,11 @@
 	gloves = /obj/item/clothing/gloves/f13/military
 	//radio = /obj/item/device/radio/headset
 	mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/helmet/f13/combat/enclave
+	//head = /obj/item/clothing/head/helmet/f13/combat/enclave
 	//back = /obj/item/weapon/storage/backpack
 
 /obj/effect/mob_spawn/human/corpse/enclave/soldier
-	name = "nclave advanced soldier"
+	name = "enclave advanced soldier"
 	uniform = /obj/item/clothing/under/syndicate/combat
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/f13/military
@@ -202,19 +204,19 @@
 	icon_living = "eclaverangedelite"
 	icon_dead = "enclave_soldier"
 	icon_gib = "enclave_soldier"
-	maxHealth = 750
-	health = 750
+	maxHealth = 650
+	health = 650
+	ranged_cooldown_time = 1
 	melee_damage_lower = 55
 	melee_damage_upper = 55
-	extra_projectiles = 5 //6 projectiles. oh lord.
-	retreat_distance = 3
-	minimum_distance = 5
-	ranged_cooldown_time = 12
+	extra_projectiles = 3
+	retreat_distance = 2
+	minimum_distance = 4
 	loot = list(/obj/effect/mob_spawn/human/corpse/enclave/soldier)
 	healable = 1
 	ranged = 1
 	attack_verb_simple = "power-fists"
-	projectiletype = /obj/item/projectile/f13plasma/repeater
+	projectiletype = /obj/item/projectile/f13plasma/repeater/simple
 	projectilesound = 'sound/f13weapons/plasmarifle.ogg'
 
 /mob/living/simple_animal/hostile/enclave/soldier_ca
@@ -224,22 +226,32 @@
 	icon_living = "enclaveranged"
 	icon_dead = "enclaveranged"
 	icon_gib = "enclave_soldier"
-	maxHealth = 275
-	health = 275
-	melee_damage_lower = 40
-	melee_damage_upper = 40
-	retreat_distance = 6
-	minimum_distance = 6
-	extra_projectiles = 2
-	ranged_cooldown_time = 22
+	maxHealth = 200
+	health = 200
+	ranged_cooldown_time = 3
+	melee_damage_lower = 30
+	melee_damage_upper = 30
+	retreat_distance = 2
+	minimum_distance = 5
 	loot = list(/obj/effect/mob_spawn/human/corpse/enclave/soldier)
 	healable = 1
 	ranged = 1
 	attack_verb_simple = "pistol-whips"
-	projectiletype = /obj/item/projectile/bullet/c46x30mm
+	projectiletype = /obj/item/projectile/bullet/a762/sport/simple/med
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
 
-/mob/living/simple_animal/hostile/bs
+/mob/living/simple_animal/hostile/enclave/soldier_ca/trainee
+	name = "Enclave Trainee"
+	desc = "An Enclave trainee in Enclave Combat Armor, wielding an assault rifle."
+	maxHealth = 100
+	health = 100
+	ranged_cooldown_time = 5
+	melee_damage_lower = 20
+	melee_damage_upper = 20
+	extra_projectiles = 0
+	projectiletype = /obj/item/projectile/bullet/a762/sport/simple/low
+
+/mob/living/simple_animal/hostile/bos
 	name = "BS"
 	desc = "the brotherhood never fails."
 	icon_state = "bs_knight"
@@ -253,6 +265,7 @@
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
+	check_friendly_fire = 1
 	speed = 1
 	stat_attack = 1
 	robust_searching = 1
@@ -264,7 +277,7 @@
 	attack_verb_simple = "áüåò"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	loot = list(/obj/effect/mob_spawn/human/corpse/bs)
+	loot = list(/obj/effect/mob_spawn/human/corpse/bos)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	faction = list("bs", "city", "vault")
@@ -275,58 +288,66 @@
 	speak_emote = list("rushes")
 	speak_chance = 1
 
-/obj/effect/mob_spawn/human/corpse/bs
+/obj/effect/mob_spawn/human/corpse/bos
 	name = "Brotherhood Knight"
 	uniform = /obj/item/clothing/under/f13/bdu
-	suit = /obj/item/clothing/suit/armor/f13/combat/brotherhood
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/f13/military
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/helmet/f13/combat/brotherhood
 	//back = /obj/item/weapon/storage/backpack
 
-/mob/living/simple_animal/hostile/bs/knight
+/mob/living/simple_animal/hostile/bos/knight/initiate
+	name = "Brotherhood Initiate"
+	desc = "A Brotherhood Initiate wielding a laser pistol and older issue Brotherhood combat armor."
+	maxHealth = 100
+	health = 100
+	ranged_cooldown_time = 5
+	projectiletype = /obj/item/projectile/beam/simple/low
+
+/mob/living/simple_animal/hostile/bos/knight
 	name = "Brotherhood Knight"
 	desc = "A Brotherhood Knight wielding a laser pistol and older issue Brotherhood combat armor."
 	icon_state = "bs_knight"
 	icon_living = "bs_knight"
 	icon_dead = "bs_knight"
 	icon_gib = "bs_knight"
-	retreat_distance = 5
-	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/bs)
+	maxHealth = 200
+	health = 200
+	ranged_cooldown_time = 3
+	retreat_distance = 2
+	minimum_distance = 4
+	loot = list(/obj/effect/mob_spawn/human/corpse/bos)
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/beam
+	projectiletype = /obj/item/projectile/beam/simple/med
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 
-/mob/living/simple_animal/hostile/bs/paladin
+/mob/living/simple_animal/hostile/bos/paladin
 	name = "Brotherhood Paladin"
 	desc = "A Paladin equipped with an AER9 and T-45d power armor. The Brotherhood has arrived."
 	icon_state = "bs_paladin"
 	icon_living = "bs_paladin"
 	icon_dead = "bs_paladin"
 	icon_gib = "bs_paladin"
-	retreat_distance = 5
-	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/bs/paladin)
+	retreat_distance = 2
+	minimum_distance = 4
+	loot = list(/obj/effect/mob_spawn/human/corpse/bos/paladin)
 	maxHealth = 600
 	health = 600
+	ranged_cooldown_time = 1
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/beam
+	projectiletype = /obj/item/projectile/beam/simple/high
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 
-/obj/effect/mob_spawn/human/corpse/bs/paladin
+/obj/effect/mob_spawn/human/corpse/bos/paladin
 	name = "Brotherhood Paladin"
 	uniform = /obj/item/clothing/under/f13/bdu
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/t45d
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/f13/military
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/helmet/f13/power_armor/t45d
 	//back = /obj/item/weapon/storage/backpack
 
 /mob/living/simple_animal/hostile/ncr
@@ -336,13 +357,14 @@
 	icon_living = "ncr_trooper"
 	icon_dead = "ncr_trooper"
 	icon_gib = "ncr_trooper"
-	faction = list("NCR")
+	faction = list("ncr")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	speak_chance = 0
 	turns_per_move = 5
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
+	check_friendly_fire = 1
 	speed = 1
 	stat_attack = 1
 	robust_searching = 1
@@ -366,15 +388,34 @@
 	speak_chance = 1
 
 /obj/effect/mob_spawn/human/corpse/ncr
-	name = "NCR Trooper"
+	name = "NCR Soldier"
 	uniform = /obj/item/clothing/under/f13/ncr
-	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
+	//suit = /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
 	shoes = /obj/item/clothing/shoes/f13/military/ncr
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/f13/ncr
+	//head = /obj/item/clothing/head/f13/ncr
 	//back = /obj/item/weapon/storage/backpack
+
+/mob/living/simple_animal/hostile/ncr/recruit
+	name = "NCR Recruit"
+	desc = "Just an NCR Recruit"
+	icon_state = "ncr_trooper"
+	icon_living = "ncr_trooper"
+	icon_dead = "ncr_trooper"
+	icon_gib = "ncr_trooper"
+	maxHealth = 100
+	health = 100
+	ranged_cooldown_time = 5
+	retreat_distance = 2
+	minimum_distance = 4
+	loot = list(/obj/effect/mob_spawn/human/corpse/ncr)
+	healable = 1
+	ranged = 1
+	projectiletype = /obj/item/projectile/bullet/a762/sport/simple/low
+	projectilesound = 'sound/weapons/garandshot.ogg'
+	casingtype = /obj/item/ammo_casing/a762
 
 /mob/living/simple_animal/hostile/ncr/trooper
 	name = "NCR Trooper"
@@ -383,12 +424,15 @@
 	icon_living = "ncr_trooper"
 	icon_dead = "ncr_trooper"
 	icon_gib = "ncr_trooper"
-	retreat_distance = 5
-	minimum_distance = 5
+	maxHealth = 200
+	health = 200
+	ranged_cooldown_time = 3
+	retreat_distance = 2
+	minimum_distance = 4
 	loot = list(/obj/effect/mob_spawn/human/corpse/ncr)
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/a762
+	projectiletype = /obj/item/projectile/bullet/a762/sport/simple/med
 	projectilesound = 'sound/weapons/garandshot.ogg'
 	casingtype = /obj/item/ammo_casing/a762
 
@@ -399,11 +443,12 @@
 	icon_living = "ncr_sergeant"
 	icon_dead = "ncr_sergeant"
 	icon_gib = "ncr_sergeant"
-	retreat_distance = 5
-	minimum_distance = 5
+	retreat_distance = 2
+	minimum_distance = 4
 	loot = list(/obj/effect/mob_spawn/human/corpse/ncr/sergeant)
-	maxHealth = 200
-	health = 200
+	maxHealth = 300
+	health = 300
+	ranged_cooldown_time = 1
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet/a556/simple
@@ -413,13 +458,14 @@
 /obj/effect/mob_spawn/human/corpse/ncr/sergeant
 	name = "NCR Sergeant"
 	uniform = /obj/item/clothing/under/f13/ncr
-	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
+	//suit = /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
 	shoes = /obj/item/clothing/shoes/f13/military/ncr
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/f13/ncr
+	//head = /obj/item/clothing/head/f13/ncr
 	//back = /obj/item/weapon/storage/backpack
+
 
 /mob/living/simple_animal/hostile/legion
 	name = "Legion"
@@ -428,8 +474,9 @@
 	icon_living = "legion_prime"
 	icon_dead = "legion_prime"
 	icon_gib = "legion_prime"
-	faction = list("legion")
+	faction = list("Legion")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	check_friendly_fire = 1
 	speak_chance = 0
 	turns_per_move = 5
 	response_help_simple = "pokes"
@@ -457,60 +504,73 @@
 	speak_emote = list("says")
 	speak_chance = 1
 
+
 /obj/effect/mob_spawn/human/corpse/legion
-	name = "Legion Prime"
+	name = "Legionnaire"
 	uniform = /obj/item/clothing/under/f13/rag
-	suit = /obj/item/clothing/suit/armor/f13/legion/recruit
+	//suit = /obj/item/clothing/suit/armor/f13/legion/recruit
 	shoes = /obj/item/clothing/shoes/f13/military/leather
 	//gloves = /obj/item/clothing/gloves/f13/ncr
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/helmet/f13/legion/prime
+	//head = /obj/item/clothing/head/helmet/f13/legion/prime
 	//back = /obj/item/weapon/storage/backpack
 
+/mob/living/simple_animal/hostile/legion/prime/recruit
+	name = "Recruit legionary"
+	desc = "Just a Legion Recruit."
+	maxHealth = 100
+	health = 100
+	ranged_cooldown_time = 5
+	projectiletype = /obj/item/projectile/bullet/a762/sport/simple/legion
+
 /mob/living/simple_animal/hostile/legion/prime
-	name = "Legion Prime"
+	name = "Veteran legionary"
 	desc = "Just a Legion Prime"
 	icon_state = "legion_prime"
 	icon_living = "legion_prime"
 	icon_dead = "legion_prime"
 	icon_gib = "legion_prime"
-	retreat_distance = 5
-	minimum_distance = 5
+	maxHealth = 200
+	health = 200
+	ranged_cooldown_time = 3
+	retreat_distance = 2
+	minimum_distance = 4
 	loot = list(/obj/effect/mob_spawn/human/corpse/legion)
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
+	projectiletype = /obj/item/projectile/bullet/a762/sport/simple/med
 	projectilesound = 'sound/weapons/garandshot.ogg'
 	casingtype = /obj/item/ammo_casing/a762
-
+	
 /mob/living/simple_animal/hostile/legion/decan
-	name = "Legion Decan"
-	desc = "Just a Legion Decan"
+	name = "Legion Decanus"
+	desc = "Just a Legion Decanus"
 	icon_state = "legion_decan"
 	icon_living = "legion_decan"
 	icon_dead = "legion_decan"
 	icon_gib = "legion_decan"
-	retreat_distance = 5
-	minimum_distance = 5
+	retreat_distance = 2
+	minimum_distance = 4
 	loot = list(/obj/effect/mob_spawn/human/corpse/legion/decan)
-	maxHealth = 225
-	health = 225
+	maxHealth = 300
+	health = 300
+	ranged_cooldown_time = 1
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
+	projectiletype = /obj/item/projectile/bullet/a762/sport/simple/high
 	projectilesound = 'sound/weapons/garandshot.ogg'
 	casingtype = /obj/item/ammo_casing/a762
 
 /obj/effect/mob_spawn/human/corpse/legion/decan
-	name = "Legion Decan"
+	name = "Legion Decanus"
 	uniform = /obj/item/clothing/under/f13/rag
-	suit = /obj/item/clothing/suit/armor/f13/legion/vet
+	//suit = /obj/item/clothing/suit/armor/f13/legion/vet
 	shoes = /obj/item/clothing/shoes/f13/military/leather
 	gloves = /obj/item/clothing/gloves/f13/doom
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/helmet/f13/legion/prime/decan
+	//head = /obj/item/clothing/head/helmet/f13/legion/prime/decan
 	//back = /obj/item/weapon/storage/backpack
 
 /mob/living/simple_animal/hostile/raider
@@ -525,6 +585,7 @@
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
+	check_friendly_fire = 1
 	speed = 1
 	stat_attack = 1
 	robust_searching = 1

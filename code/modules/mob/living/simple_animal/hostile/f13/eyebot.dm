@@ -127,3 +127,9 @@
 	dextrous = TRUE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
 	speed = -1
+
+
+/mob/living/simple_animal/hostile/eyebot/enclave
+	maxHealth = 150
+	health = 150
+	faction = list("enclave")

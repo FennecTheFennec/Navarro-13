@@ -34,8 +34,21 @@
 	wound_bonus = 25
 	bare_wound_bonus = 25
 
-/obj/item/projectile/bullet/a762/sport/simple //for simple mobs, separate to allow balancing
+
+/obj/item/projectile/bullet/a762/sport/simple/high //for simple mobs, separate to allow balancing
 	name = ".308 bullet"
+	damage = 35
+/obj/item/projectile/bullet/a762/sport/simple/med //for simple mobs, separate to allow balancing
+	name = ".308 bullet"
+	damage = 27
+
+/obj/item/projectile/bullet/a762/sport/simple/low //for simple mobs, separate to allow balancing
+	name = ".308 bullet"
+	damage = 20
+
+/obj/item/projectile/bullet/a762/sport/simple/legion //for simple mobs, separate to allow balancing
+	name = ".308 bullet"
+	damage = 14
 
 //5.56x45mm
 /obj/item/projectile/bullet/a556
