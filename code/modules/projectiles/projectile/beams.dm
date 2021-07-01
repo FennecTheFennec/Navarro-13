@@ -19,12 +19,15 @@
 
 /obj/item/projectile/beam/simple/high
 	damage = 35
+	armour_penetration = 0.3
 
 /obj/item/projectile/beam/simple/med
 	damage = 27
+	armour_penetration = 0.2
 
 /obj/item/projectile/beam/simple/low
 	damage = 20
+	armour_penetration = 0.1
 
 /obj/item/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
