@@ -38,17 +38,21 @@
 /obj/item/projectile/bullet/a762/sport/simple/high //for simple mobs, separate to allow balancing
 	name = ".308 bullet"
 	damage = 35
+	armour_penetration = 0.3
 /obj/item/projectile/bullet/a762/sport/simple/med //for simple mobs, separate to allow balancing
 	name = ".308 bullet"
 	damage = 27
+	armour_penetration = 0.2
 
 /obj/item/projectile/bullet/a762/sport/simple/low //for simple mobs, separate to allow balancing
 	name = ".308 bullet"
 	damage = 20
+	armour_penetration = 0.1
 
 /obj/item/projectile/bullet/a762/sport/simple/legion //for simple mobs, separate to allow balancing
 	name = ".308 bullet"
 	damage = 14
+	armour_penetration = 0.05
 
 //5.56x45mm
 /obj/item/projectile/bullet/a556
