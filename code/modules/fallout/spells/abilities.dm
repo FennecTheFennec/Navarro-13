@@ -7,7 +7,7 @@
 	invocation = ""
 	invocation_type = "shout"
 	clothes_req = 0
-	range = 3
+	range = 1
 
 	cast_sound = 'sound/magic/summon_karp.ogg'
 
