@@ -377,6 +377,7 @@
 
 /obj/item/projectile/f13plasma/repeater/simple
 	damage = 12
+	armour_penetration = 0.5
 
 /obj/item/projectile/f13plasma/pistol //Plasma pistol
 	damage = 53

@@ -157,12 +157,12 @@
 /obj/effect/mob_spawn/human/corpse/enclavescientist
 	name = "enclave scientist"
 	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/radiation
+	//suit = /obj/item/clothing/suit/radiation
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/f13/military
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/radiation
+	//head = /obj/item/clothing/head/radiation
 	//back = /obj/item/weapon/storage/backpack
 
 /obj/effect/mob_spawn/human/corpse/enclave/soldier_ca
@@ -291,10 +291,12 @@
 /obj/effect/mob_spawn/human/corpse/bos
 	name = "Brotherhood Knight"
 	uniform = /obj/item/clothing/under/f13/bdu
+	//suit = /obj/item/clothing/suit/armor/f13/combat/brotherhood
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/f13/military
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
+	//head = /obj/item/clothing/head/helmet/f13/combat/brotherhood
 	//back = /obj/item/weapon/storage/backpack
 
 /mob/living/simple_animal/hostile/bos/knight/initiate
@@ -344,10 +346,12 @@
 /obj/effect/mob_spawn/human/corpse/bos/paladin
 	name = "Brotherhood Paladin"
 	uniform = /obj/item/clothing/under/f13/bdu
+	//suit = /obj/item/clothing/suit/armor/f13/power_armor/t45d
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/f13/military
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
+	//head = /obj/item/clothing/head/helmet/f13/power_armor/t45d
 	//back = /obj/item/weapon/storage/backpack
 
 /mob/living/simple_animal/hostile/ncr
