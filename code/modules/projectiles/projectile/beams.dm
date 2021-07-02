@@ -18,16 +18,16 @@
 	bare_wound_bonus = 10
 
 /obj/item/projectile/beam/simple/high
-	damage = 35
-	armour_penetration = 0.3
+	damage = 23
+	armour_penetration = 0.5
 
 /obj/item/projectile/beam/simple/med
-	damage = 27
-	armour_penetration = 0.2
+	damage = 20
+	armour_penetration = 0.35
 
 /obj/item/projectile/beam/simple/low
-	damage = 20
-	armour_penetration = 0.1
+	damage = 17
+	armour_penetration = 0.25
 
 /obj/item/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser

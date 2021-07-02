@@ -206,7 +206,7 @@
 	icon_gib = "enclave_soldier"
 	maxHealth = 650
 	health = 650
-	ranged_cooldown_time = 1
+	ranged_cooldown_time = 8
 	melee_damage_lower = 55
 	melee_damage_upper = 55
 	extra_projectiles = 3
@@ -228,7 +228,7 @@
 	icon_gib = "enclave_soldier"
 	maxHealth = 200
 	health = 200
-	ranged_cooldown_time = 3
+	ranged_cooldown_time = 12
 	melee_damage_lower = 30
 	melee_damage_upper = 30
 	retreat_distance = 2
@@ -245,7 +245,7 @@
 	desc = "An Enclave trainee in Enclave Combat Armor, wielding an assault rifle."
 	maxHealth = 100
 	health = 100
-	ranged_cooldown_time = 5
+	ranged_cooldown_time = 16
 	melee_damage_lower = 20
 	melee_damage_upper = 20
 	extra_projectiles = 0
@@ -304,7 +304,7 @@
 	desc = "A Brotherhood Initiate wielding a laser pistol and older issue Brotherhood combat armor."
 	maxHealth = 100
 	health = 100
-	ranged_cooldown_time = 5
+	ranged_cooldown_time = 16
 	projectiletype = /obj/item/projectile/beam/simple/low
 
 /mob/living/simple_animal/hostile/bos/knight
@@ -316,7 +316,7 @@
 	icon_gib = "bs_knight"
 	maxHealth = 200
 	health = 200
-	ranged_cooldown_time = 3
+	ranged_cooldown_time = 12
 	retreat_distance = 2
 	minimum_distance = 4
 	loot = list(/obj/effect/mob_spawn/human/corpse/bos)
@@ -337,7 +337,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/bos/paladin)
 	maxHealth = 600
 	health = 600
-	ranged_cooldown_time = 1
+	ranged_cooldown_time = 8
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam/simple/high
@@ -411,7 +411,7 @@
 	icon_gib = "ncr_trooper"
 	maxHealth = 100
 	health = 100
-	ranged_cooldown_time = 5
+	ranged_cooldown_time = 16
 	retreat_distance = 2
 	minimum_distance = 4
 	loot = list(/obj/effect/mob_spawn/human/corpse/ncr)
@@ -430,7 +430,7 @@
 	icon_gib = "ncr_trooper"
 	maxHealth = 200
 	health = 200
-	ranged_cooldown_time = 3
+	ranged_cooldown_time = 12
 	retreat_distance = 2
 	minimum_distance = 4
 	loot = list(/obj/effect/mob_spawn/human/corpse/ncr)
@@ -452,7 +452,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/ncr/sergeant)
 	maxHealth = 300
 	health = 300
-	ranged_cooldown_time = 1
+	ranged_cooldown_time = 8
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet/a556/simple
@@ -500,7 +500,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/legion)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
-	faction = list("hostile")
+	faction = list("legion")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	del_on_death = 1
@@ -523,9 +523,9 @@
 /mob/living/simple_animal/hostile/legion/prime/recruit
 	name = "Recruit legionary"
 	desc = "Just a Legion Recruit."
-	maxHealth = 100
-	health = 100
-	ranged_cooldown_time = 5
+	maxHealth = 50
+	health = 50
+	ranged_cooldown_time = 10
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple/legion
 
 /mob/living/simple_animal/hostile/legion/prime

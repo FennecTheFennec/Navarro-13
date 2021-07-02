@@ -3,7 +3,7 @@
 	desc = "This ability summons to your location."
 
 	school = "conjuration"
-	charge_max = 1000
+	charge_max = 2500
 	invocation = ""
 	invocation_type = "shout"
 	clothes_req = 0
